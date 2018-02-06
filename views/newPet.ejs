@@ -1,0 +1,19 @@
+<% include partial/header %>
+
+<h1>Add a new pet </h1>
+
+<form action="/pet/new" method="POST">
+	<div class="form-group">
+	    <label for="petName">Name</label>
+	    <input type="text" class="form-control" name="petName" placeholder="Enter name">
+	</div>
+
+	<div class="form-group">
+	    <label for="picUrl">Picture Url</label>
+	    <input type="url" class="form-control" name="picUrl" placeholder="Enter url">
+	</div>
+
+	<button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+<% include partial/footer %>

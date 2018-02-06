@@ -1,0 +1,15 @@
+<% include partial/header %>
+
+<h1>Welcome to Rent-A-Pet</h1>
+<p>Here are the adorable pets for you to rent</p>
+
+<div class="row">
+	<%	for(var i = 0; i < pets.length; i++){ %>
+			<div class="col col-lg-4">
+				<img src="<%= pets[i].img %>" class="img-thumbnail">
+				<p> <%= pets[i].name %> </p>
+			</div>
+	<%	} %>
+</div>
+
+<% include partial/footer %>
