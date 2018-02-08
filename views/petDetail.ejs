@@ -1,0 +1,29 @@
+<% include partial/header %>
+
+<h1>This is <%= pet.name %></h1>
+
+<div class="row">
+	<div class="col col-lg-4">
+		<img src="<%= pet.img %>" class="img-thumbnail">
+		<p style="text-align: center"> <%= pet.name %> </p>
+	</div>
+	<div class="col col-lg-8">
+		<ul class="list-group">
+			<li class="list-group-item">
+				Name: <%= pet.name %>
+			</li>
+			<li class="list-group-item">
+				Breed: Moewdas
+			</li>
+			<li class="list-group-item">
+				Diet: Gourmet Organic Pet Food Only
+			</li>
+			<li class="list-group-item">
+				Personality: Cute but grumpy when hungry
+			</li>
+		</ul>
+	</div>
+</div>
+
+<% include partial/footer %>
+
