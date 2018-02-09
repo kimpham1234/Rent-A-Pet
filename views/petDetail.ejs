@@ -6,6 +6,14 @@
 	<div class="col col-lg-4">
 		<img src="<%= pet.img %>" class="img-thumbnail">
 		<p style="text-align: center"> <%= pet.name %> </p>
+		
+		<div class="row">
+			<div class="col col-lg" style="text-align: center">
+				<button type="button" class="btn btn-outline-primary" onclick="showHidden('bookingForm', 'ratingForm')">Book <%= pet.name %> </button>
+				<button type="button" class="btn btn-outline-danger">&#9825;</button>
+				<button type="button" class="btn btn-outline-info" onclick="showHidden('ratingForm', 'bookingForm')">Rate <%= pet.name %> </button>
+			</div>
+		</div>
 	</div>
 	<div class="col col-lg-8">
 		<ul class="list-group">
@@ -25,5 +33,49 @@
 	</div>
 </div>
 
+<div class="row" id="bookingForm" style="margin-top:20px; width:50%; display:none">
+	<form>
+		<h3>Book <%= pet.name %>!</h3>
+		<div class="form-group">
+			<label for="bookingName">Your Name</label>
+			<input type="text" class="form-control" name="bookingName" placeholder="Name">
+			<label for="starting-date">Starting Date</label>
+			<input type="date" class="form-control" name="starting-date">
+			<label for="ending-date">Ending Date</label>
+			<input type="date" class="form-control" name="ending-date">
+		</div>
+		<button type="submit" class="btn btn-outline-success" onclick="alert('Success! Submitted Your Request!')">Submit</button>
+	</form>
+</div>
+
+<div class="row" id="ratingForm" style="margin-top:20px; width:50%; display:none">
+	<form>
+		<h3>Rate <%= pet.name %>!</h3>
+		<div class="form-group">
+			<label for="nameRating">Your Name</label>
+			<input type="text" class="form-control" name="nameRating" placeholder="Your Name">
+		</div>
+		<div class="form-group">
+			<label for="textAreaRating">Write about your experience with <%= pet.name %>!</label>
+			<textarea class="form-control" placeholder="Write about your experience!"></textarea>
+		</div>
+		<button type="submit" class="btn btn-outline-success" name="textAreaRating" onclick="alert('Success! Submitted Your Rating!')">Submit</button>
+	</form>
+</div>
+<script>
+	function showHidden(element1, element2){
+		var ele1 = document.getElementById(element1);
+		var ele2 = document.getElementById(element2);
+		if(ele1.style.display === "none"){
+			ele1.style.display = "block";
+			ele2.style.display = "none";
+		}
+		else if(ele1.style.display === "block"){
+			ele1.style.display = "none";
+		}
+	}
+</script>
 <% include partial/footer %>
+
+
 
