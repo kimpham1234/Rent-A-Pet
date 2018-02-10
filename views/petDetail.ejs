@@ -13,17 +13,34 @@
 				Name: <%= pet.name %>
 			</li>
 			<li class="list-group-item">
-				Breed: Moewdas
+				Breed: <%= pet.breed %>
 			</li>
 			<li class="list-group-item">
-				Diet: Gourmet Organic Pet Food Only
+				Diet: <%= pet.diet %>
 			</li>
 			<li class="list-group-item">
-				Personality: Cute but grumpy when hungry
+				Personality: <%= pet.personality %>
 			</li>
 		</ul>
 	</div>
 </div>
+<% var next = "/pet/"+(pet.id+1) %>
+<% var pre = "/pet/"+(pet.id-1) %>
+
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
+  	<% if(pet.id - 1 >= 0) { %>
+    	<a class="nav-link" href="<%= pre %>"> << Previous Pet</a>
+    <% } %>
+  </li>
+  <li class="nav-item">
+  	<% if(pet.id + 1 < max){ %>
+    	<a class="nav-link" href="<%= next %>">Next Pet >> </a>
+	<% }else { %>
+		<a class="nav-link" href="/">That's it</a>
+	<% } %>
+  </li>
+</ul>
 
 <% include partial/footer %>
 
