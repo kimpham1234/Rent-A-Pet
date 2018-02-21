@@ -6,7 +6,7 @@
 <div class="row" style="display: flex; flex-wrap: wrap;">
 	<%	for(var i = 0; i < pets.length; i++){ %>
 			<div class="col col-lg-4">
-				<% var path = "/pet/"+pets[i].id; %>
+				<% var path = "/pet/"+pets[i]._id; %>
 				<a href="<%= path %>"><img src="<%= pets[i].img %>" class="img-thumbnail"></a>
 				<p style="text-align: center"> <%= pets[i].name %> </p>
 			</div>
